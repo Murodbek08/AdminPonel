@@ -30,8 +30,8 @@ Backend yo'q — barcha API so'rovlari **Mock Service Worker (MSW)** orqali simu
 
 ```bash
 # 1. Repositoryni clone qiling
-git clone https://github.com/your-username/admin-panel.git
-cd admin-panel
+git clone https://github.com/Murodbek08/AdminPonel.git
+cd AdminPonel
 
 # 2. Bog'liqliklarni o'rnating
 npm install
