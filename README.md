@@ -15,7 +15,7 @@ Backend yo'q — barcha API so'rovlari **Mock Service Worker (MSW)** orqali simu
 - 🚫 Ruxsatsiz kirish — `/403` sahifasi
 - 🌙 Dark / Light tema
 - 🌐 Ko'p tillilik — O'zbek / Rus / Ingliz
-- 📱 Responsive dizayn (360px dan boshlab)
+- 📱 Responsive dizayn (320px dan boshlab)
 
 ---
 
