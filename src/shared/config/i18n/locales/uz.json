@@ -15,7 +15,21 @@
     "noData": "Ma'lumot topilmadi",
     "sortDesc": "Kamayish tartibida saralash uchun bosing",
     "sortAsc": "O'sish tartibida saralash uchun bosing",
-    "cancelSort": "Saralashni bekor qilish"
+    "cancelSort": "Saralashni bekor qilish",
+    "months": {
+      "yan": "Yan",
+      "fev": "Fev",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "iyn": "Iyn",
+      "iyl": "Iyl",
+      "avg": "Avg",
+      "sen": "Sen",
+      "okt": "Okt",
+      "noy": "Noy",
+      "dek": "Dek"
+    }
   },
   "sidebar": {
     "adminPanel": "Admin Panel",

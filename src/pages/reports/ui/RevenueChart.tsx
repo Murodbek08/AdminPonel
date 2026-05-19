@@ -22,7 +22,7 @@ interface RevenueChartProps {
 }
 
 export default function RevenueChart({ data, loading }: RevenueChartProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     token: {
       colorPrimary,
@@ -32,6 +32,11 @@ export default function RevenueChart({ data, loading }: RevenueChartProps) {
       colorTextSecondary,
     },
   } = antTheme.useToken();
+
+  const formattedData = data?.map((item) => ({
+    ...item,
+    translatedMonth: t(`common.months.${item.month.toLowerCase()}`, item.month),
+  }));
 
   return (
     <Card
@@ -43,7 +48,8 @@ export default function RevenueChart({ data, loading }: RevenueChartProps) {
       ) : (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart
-            data={data}
+            key={i18n.language}
+            data={formattedData}
             margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
           >
             <CartesianGrid
@@ -51,7 +57,7 @@ export default function RevenueChart({ data, loading }: RevenueChartProps) {
               stroke={colorBorderSecondary}
             />
             <XAxis
-              dataKey="month"
+              dataKey="translatedMonth" // 🎯 DataKey endi tarjima qilingan oy bo'ladi
               tick={{ fill: colorTextSecondary, fontSize: 12 }}
               axisLine={false}
               tickLine={false}
@@ -72,12 +78,10 @@ export default function RevenueChart({ data, loading }: RevenueChartProps) {
                 borderRadius: 8,
                 color: colorText,
               }}
-              formatter={(value: any) =>
-                [
-                  `${value.toLocaleString()} UZS`,
-                  t("reports.monthlyRevenue"),
-                ] as const
-              }
+              formatter={(value: any) => [
+                `${Number(value || 0).toLocaleString()} UZS`,
+                t("reports.monthlyRevenue"),
+              ]}
             />
             <Bar
               dataKey="amount"

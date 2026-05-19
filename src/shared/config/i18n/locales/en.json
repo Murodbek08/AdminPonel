@@ -15,7 +15,21 @@
     "noData": "No data found",
     "sortDesc": "Click to sort descending",
     "sortAsc": "Click to sort ascending",
-    "cancelSort": "Click to cancel sorting"
+    "cancelSort": "Click to cancel sorting",
+    "months": {
+      "yan": "Jan",
+      "fev": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "iyn": "Jun",
+      "iyl": "Jul",
+      "avg": "Aug",
+      "sen": "Sep",
+      "okt": "Oct",
+      "noy": "Nov",
+      "dek": "Dec"
+    }
   },
   "sidebar": {
     "adminPanel": "Admin Panel",
