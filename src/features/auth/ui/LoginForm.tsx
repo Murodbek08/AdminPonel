@@ -82,7 +82,21 @@ export default function LoginForm() {
           name="password"
           rules={[
             { required: true, message: t("auth.passwordRequired") },
-            { min: 6, message: t("auth.passwordMin") },
+            {
+              validator: (_, value) => {
+                if (!value) return Promise.resolve();
+                if (value.length < 8) {
+                  return Promise.reject(t("auth.passwordMin"));
+                }
+                if (!/[A-Z]/.test(value)) {
+                  return Promise.reject(t("users.passwordUpper"));
+                }
+                if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(value)) {
+                  return Promise.reject(t("users.passwordSpecial"));
+                }
+                return Promise.resolve();
+              },
+            },
           ]}
         >
           <Input.Password
