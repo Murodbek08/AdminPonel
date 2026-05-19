@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client";
 import "@/shared/config/i18n";
 import Providers from "./providers/index.tsx";
 import App from "./App.tsx";
+
 import "./index.css";
+import "@ant-design/v5-patch-for-react-19";
 
 async function enableMocking() {
   const { worker } = await import("../mocks/browser");

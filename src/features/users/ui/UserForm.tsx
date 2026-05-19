@@ -70,7 +70,7 @@ export default function UserForm({
       confirmLoading={loading}
       onOk={handleOk}
       onCancel={onCancel}
-      destroyOnClose
+      destroyOnHidden
       width={isMobile ? "94vw" : 480}
       styles={{
         body: {
