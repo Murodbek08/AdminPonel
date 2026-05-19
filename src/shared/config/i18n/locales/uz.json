@@ -12,7 +12,10 @@
     "actions": "Amallar",
     "yes": "Ha",
     "no": "Yo'q",
-    "noData": "Ma'lumot topilmadi"
+    "noData": "Ma'lumot topilmadi",
+    "sortDesc": "Kamayish tartibida saralash uchun bosing",
+    "sortAsc": "O'sish tartibida saralash uchun bosing",
+    "cancelSort": "Saralashni bekor qilish"
   },
   "sidebar": {
     "adminPanel": "Admin Panel",

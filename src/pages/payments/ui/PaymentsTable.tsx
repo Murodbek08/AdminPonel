@@ -67,6 +67,11 @@ export default function PaymentsTable({ data, loading }: PaymentsTableProps) {
       pagination={false}
       scroll={{ x: 500 }}
       size="middle"
+      locale={{
+        triggerDesc: t("common.sortDesc"),
+        triggerAsc: t("common.sortAsc"),
+        cancelSort: t("common.cancelSort"),
+      }}
     />
   );
 }

@@ -12,7 +12,10 @@
     "actions": "Actions",
     "yes": "Yes",
     "no": "No",
-    "noData": "No data found"
+    "noData": "No data found",
+    "sortDesc": "Click to sort descending",
+    "sortAsc": "Click to sort ascending",
+    "cancelSort": "Click to cancel sorting"
   },
   "sidebar": {
     "adminPanel": "Admin Panel",

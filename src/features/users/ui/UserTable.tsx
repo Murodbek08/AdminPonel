@@ -109,6 +109,11 @@ export default function UserTable({
       pagination={false}
       scroll={{ x: 700 }}
       size="middle"
+      locale={{
+        triggerDesc: t("common.sortDesc"),
+        triggerAsc: t("common.sortAsc"),
+        cancelSort: t("common.cancelSort"),
+      }}
     />
   );
 }
