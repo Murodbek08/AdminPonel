@@ -1,10 +1,10 @@
-import { useAuthStore } from "@/features/auth";
 import axios from "axios";
 
 const api = axios.create({ baseURL: "/" });
 
 api.interceptors.request.use((config) => {
-  const token = useAuthStore.getState().token;
+  const raw = localStorage.getItem("auth-storage");
+  const token = raw ? JSON.parse(raw)?.state?.token : null;
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
@@ -15,7 +15,7 @@ api.interceptors.response.use(
     const isLoginRequest = error.config?.url?.includes("/api/auth/login");
 
     if (error.response?.status === 401 && !isLoginRequest) {
-      useAuthStore.getState().logout();
+      localStorage.removeItem("auth-storage");
       window.location.href = "/login";
     }
     return Promise.reject(error);

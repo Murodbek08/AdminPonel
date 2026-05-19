@@ -1,5 +1,5 @@
 import { http, HttpResponse, delay } from "msw";
-import type { User, Role } from "../shared/types";
+import type { User, Role } from "@/shared/types";
 import { usersDb, rolesDb, paymentsDb, reportsDb } from "./db";
 
 function createMockToken(user: Omit<User, "password">): string {

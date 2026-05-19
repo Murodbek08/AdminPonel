@@ -1,4 +1,3 @@
-import { useAuthStore } from "@/features/auth";
 import { Navigate, Outlet } from "react-router-dom";
 
 interface Props {
@@ -6,8 +5,9 @@ interface Props {
 }
 
 export default function RoleGuard({ allowedRoles }: Props) {
-  const user = useAuthStore((s) => s.user);
-  const hasRole = user?.roles.some((r) => allowedRoles.includes(r));
+  const raw = localStorage.getItem("auth-storage");
+  const user = raw ? JSON.parse(raw)?.state?.user : null;
+  const hasRole = user?.roles.some((r: string) => allowedRoles.includes(r));
   if (!hasRole) return <Navigate to="/403" replace />;
   return <Outlet />;
 }
