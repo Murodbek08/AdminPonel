@@ -159,9 +159,6 @@ src/
 
 ```bash
 npm run dev       # Development serverni ishga tushirish
-npm run build     # Production build
-npm run preview   # Production buildni preview qilish
-npm run lint      # ESLint tekshiruvi
 ```
 
 ---
